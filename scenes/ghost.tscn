@@ -494,25 +494,21 @@ animations = [{
 "texture": SubResource("AtlasTexture_mc74k")
 }],
 "loop": true,
-"name": &"wlak_w",
+"name": &"walk_w",
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l05a0"]
-radius = 3.0
-height = 20.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ooic"]
+radius = 5.0
 
 [node name="ghost" type="CharacterBody2D"]
 script = ExtResource("1_q8uxj")
 
 [node name="ghost_animated" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xviel")
-animation = &"idle"
+animation = &"walk_w"
 autoplay = "idle"
-frame_progress = 0.17117
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 3)
-shape = SubResource("CapsuleShape2D_l05a0")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_4ooic")
